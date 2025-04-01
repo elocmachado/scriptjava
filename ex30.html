@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iteração com o for of</title>
+</head>
+<body>
+   
+    <h1> Iteração de um array</h1>
+    <div id = "resultado"></div>
+    <h1> Iteração de um array Par</h1>
+    <div id = "resultado_par"></div>
+    <h1> Iteração de um array Impar</h1>
+    <div id = "resultado_impar"></div>
+
+    <script>
+        const numeros = [1,2,3,4,5];
+        let resultadoDiv = document.getElementById("resultado");
+        let resultadoDiv_impar = document.getElementById("resultado_impar");
+        let resultadoDiv_par = document.getElementById("resultado_par");
+
+
+        let output = "";
+        let output_impar = "";
+        let output_par = "";
+
+        for(const numero of numeros){
+            output += numero + "<br>";
+            if(numero % 2 == 0){
+                output_par += numero + " - ";
+            }else{
+                output_impar += numero + " - ";
+            }
+
+        }
+        resultadoDiv.innerHTML = output;
+        resultadoDiv_impar.innerHTML = output_impar;
+        resultadoDiv_par.innerHTML = output_par;
+    </script>
+
+</body>
+</html>
