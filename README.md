@@ -1,1 +1,1 @@
-# scriptjava
+# JavaScript
