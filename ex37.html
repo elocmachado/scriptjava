@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 37 - Comprimento das Strings</title>
+</head>
+<body>
+
+    <h1>Calcule o Comprimento das Strings</h1>
+
+    <!-- Campo de entrada para o usuário -->
+    <label for="inputStrings">Digite as strings (separadas por vírgulas):</label>
+    <input type="text" id="inputStrings" placeholder="ex: banana, maçã, abacaxi, uva">
+    <button onclick="calcularComprimento()">Calcular</button>
+
+    <!-- Área para mostrar o resultado -->
+    <h2>Resultado:</h2>
+    <p id="resultado"></p>
+
+    <script>
+        // Função para calcular o comprimento das strings
+        function comprimentoDasStrings(arr) {
+            return arr.map(str => str.length);
+        }
+
+        // Função que será chamada ao clicar no botão
+        function calcularComprimento() {
+            // Obtém o valor do campo de entrada
+            const input = document.getElementById("inputStrings").value;
+            
+            // Divide a string de entrada em um array usando vírgulas como separador
+            const arr = input.split(",").map(str => str.trim()); // .trim() remove espaços extras
+
+            // Calcula o comprimento de cada string no array
+            const resultados = comprimentoDasStrings(arr);
+            
+            // Exibe o resultado na página
+            document.getElementById("resultado").textContent = "Comprimentos: " + resultados.join(", ");
+        }
+    </script>
+
+</body>
+</html>

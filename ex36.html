@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma dos Pares</title>
+</head>
+<body>
+    <label for="num"> Digite os números: </label>
+    <input type="text" id="num" placeholder="Ex: 10,20,30,40,50">
+    
+    <p id="resultado"></p>
+    <button onclick="numPares(num.value)">Somar</button>
+
+    <script>
+
+        let resultado = document.getElementById("resultado");
+        let soma = 0;
+        const numPares=(num) => {
+            let arr = num.split(","); 
+            for (let i = 0; i < arr.length; i++) {
+                // Verifica se o número é par
+                if (arr[i] % 2 === 0) {
+                    alert(arr[i]);
+                    soma += parseFloat(arr[i]); // Adiciona o número à soma
+                }
+            }
+            resultado.innerHTML = soma;
+        }
+    </script>
+</body>
+</html>
